@@ -3,16 +3,10 @@
 <h1>{{value}} page</h1>
 {% endmacro %}
 
-
-
-
 <!--called in about-->
 {% macro input_field(name,type='text',placeholder="") %}
-
 <label for="">{{name | title}}</label>
 <input type="{{ type }}" name="{{ name }}" placeholder="{{placeholder}}"><br><br>
-
-
 {% endmacro %}
 
 
@@ -25,7 +19,4 @@
     <h1>Project</h1>
     {{caller()}}
 </div>
-
-
-
 {% endmacro %}
