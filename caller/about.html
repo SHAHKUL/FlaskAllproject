@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+</head>
+<body>
+
+{% import 'macros.html' as element %}
+{{element.title("About")}}
+    <h3>from about form</h3>
+
+<form action="">
+    {{element.input_field("username","","username")}}
+    {{element.input_field("password","password","password")}}
+</form>
+
+{% call  element.card("Shahkul","trainer")%}
+    <ul>
+        <li>Html</li>
+        <li>Css</li>
+        <li>javascript</li>
+    </ul>
+{% endcall %}
+
+</body>
+</html>
