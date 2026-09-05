@@ -1,0 +1,31 @@
+<!--called in about & variable-->
+{% macro title(value) %}
+<h1>{{value}} page</h1>
+{% endmacro %}
+
+
+
+
+<!--called in about-->
+{% macro input_field(name,type='text',placeholder="") %}
+
+<label for="">{{name | title}}</label>
+<input type="{{ type }}" name="{{ name }}" placeholder="{{placeholder}}"><br><br>
+
+
+{% endmacro %}
+
+
+{% macro card(name,role) %}
+    <div>
+        <h1>Name: {{name}}</h1>
+        <h12>role: {{role}}</h12>
+    </div>
+<div>
+    <h1>Project</h1>
+    {{caller()}}
+</div>
+
+
+
+{% endmacro %}
