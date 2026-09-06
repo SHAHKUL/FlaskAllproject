@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Data</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+        <a href="{{ url_for('details_add')}}">
+        <button class="btn btn-primary m-5">Add Details</button>
+            </a>
+    </div>
+<table class="table table-bordered m-5">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+         <th>Update</th>
+         <th>Delete</th>
+    </tr>
+      <tbody>
+       {% for d in data %}
+       <tr>
+           <td>{{d.name}}</td>
+            <td>{{d.age}}</td>
+            <td>
+                <a href="{{ url_for('details_edit',id=d.id)}}">
+                <button class="btn btn-warning">Edit</button>
+                    </a>
+            </td>
+            <td>
+                <a href="{{ url_for('details_delete',id=d.id)}}">
+                <button  class="btn btn-danger">Delete</button> </a> </td>
+
+       </tr>
+
+
+    {% endfor %}
+    </tbody>
+    </thead>
+</table>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
